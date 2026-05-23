@@ -1,11 +1,12 @@
-# Maintainer: artist for Artix Linux
+# Maintainer: callmetango
+# Contributor: artist <artist@artixlinux.org>
 
 pkgname=sonic-frameworks-runner
 pkgver=6.26.0
 pkgrel=1
 pkgdesc='Framework for providing different actions given a string query'
 arch=(x86_64)
-url="https://github.com/Sonic-DE/$pkgname"
+url='https://github.com/Sonic-DE/sonic-frameworks-runner'
 license=(LGPL-2.0-only LGPL-3.0-only)
 depends=(libstdc++
          kconfig
@@ -23,7 +24,8 @@ groups=(sonicde-frameworks)
 conflicts=(krunner)
 provides=(krunner)
 replaces=(krunner)
-source=("$pkgname-$pkgver.tar.gz::${url}/archive/refs/tags/$pkgver.tar.gz")
+source=("$pkgname-$pkgver.tar.gz::${url}/archive/refs/tags/${pkgver}.tar.gz")
+sha256sums=('f83d4c28ca070ed3d9d483c70ddad85e9bfaa914bce52a19d7f2ae03234350ce')
 
 build() {
   cmake -B build -S $pkgname-$pkgver \
@@ -34,4 +36,3 @@ build() {
 package() {
   DESTDIR="$pkgdir" cmake --install build
 }
-sha256sums=('f83d4c28ca070ed3d9d483c70ddad85e9bfaa914bce52a19d7f2ae03234350ce')
