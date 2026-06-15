@@ -2,8 +2,8 @@
 # Contributor: artist <artist@artixlinux.org>
 
 pkgname=sonic-frameworks-runner
-pkgver=6.26.0
-pkgrel=2
+pkgver=6.27.0
+pkgrel=1
 pkgdesc='Framework for providing different actions given a string query'
 arch=(x86_64)
 url='https://github.com/Sonic-DE/sonic-frameworks-runner'
@@ -17,15 +17,15 @@ depends=(libstdc++
          sonic-frameworks-core-addons
          sonic-frameworks-windowsystem)
 makedepends=(doxygen
-             extra-cmake-modules
-             kdoctools
-             qt6-tools)
+             qt6-tools
+             sonic-frameworks-cmake-modules
+             sonic-frameworks-doctools)
 groups=(sonicde-frameworks)
 conflicts=(krunner)
 provides=(krunner)
 replaces=(krunner)
 source=("$pkgname-$pkgver.tar.gz::${url}/archive/refs/tags/${pkgver}.tar.gz")
-sha256sums=('f83d4c28ca070ed3d9d483c70ddad85e9bfaa914bce52a19d7f2ae03234350ce')
+sha256sums=('96eecff3f5f4bf44dd6103095a29a3a6c37be629de3016ed1def5d4d78fb9f52')
 
 build() {
   cmake -B build -S $pkgname-$pkgver \
