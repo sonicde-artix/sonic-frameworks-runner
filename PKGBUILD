@@ -3,7 +3,7 @@
 
 pkgname=sonic-frameworks-runner
 pkgver=6.27.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Framework for providing different actions given a string query'
 arch=(x86_64)
 url='https://github.com/Sonic-DE/sonic-frameworks-runner'
@@ -29,6 +29,7 @@ sha256sums=('96eecff3f5f4bf44dd6103095a29a3a6c37be629de3016ed1def5d4d78fb9f52')
 
 build() {
   cmake -B build -S $pkgname-$pkgver \
+    -DCMAKE_INSTALL_LIBDIR=lib \
     -DBUILD_TESTING=OFF
   cmake --build build
 }
